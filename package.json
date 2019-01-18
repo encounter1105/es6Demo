@@ -1,0 +1,19 @@
+{
+  "name": "es6demo",
+  "version": "1.0.0",
+  "description": "es6study",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/encounter1105/es6Demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/encounter1105/es6Demo/issues"
+  },
+  "homepage": "https://github.com/encounter1105/es6Demo#readme"
+}
