@@ -50,7 +50,28 @@ let json ={
 // console.log(arr);
 
 //find() 实例方法
-let arr=[1,2,3,4,5,6,7,8.9];
-console.log(arr.find(function(value,index,arr){
-    return value >5;
-}))
+// let arr=[1,2,3,4,5,6,7,8.9];
+// console.log(arr.find(function(value,index,arr){
+//     return value >5;
+// }))
+
+// fill
+// let arr=['lj','梁娟','太极公司'];
+// arr.fill('web',1,3);
+// console.log(arr);
+
+// //数组循环
+// let arr=['lj','梁娟','太极公司'];
+// for(let [index,val] of arr.entries()){
+//     console.log(index+':'+val);
+// }
+
+//entries方法
+let arr=['lj','梁娟','太极公司'];
+let list = arr.entries();
+console.log(list.next().value);
+console.log('******************')
+console.log(list.next().value);
+console.log('&&&&&&&&&&&&&&&&&&&')
+console.log(list.next().value);
+console.log('$$$$$$$$$$$$$$$$$$$')
