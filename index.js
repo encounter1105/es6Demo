@@ -35,12 +35,12 @@
 // console.log(Number.parseFloat(a));
 
 // ES6新增的数组知识
-let json ={
-    '0':'lj',
-    '1':'梁娟',
-    '2':'太极员工',
-    length:3
-}
+// let json ={
+//     '0':'lj',
+//     '1':'梁娟',
+//     '2':'太极员工',
+//     length:3
+// }
 //把json数组转换成array  Array.from方法
 // let arr = Array.from(json);
 // console.log(arr);
@@ -67,11 +67,102 @@ let json ={
 // }
 
 //entries方法
-let arr=['lj','梁娟','太极公司'];
-let list = arr.entries();
-console.log(list.next().value);
-console.log('******************')
-console.log(list.next().value);
-console.log('&&&&&&&&&&&&&&&&&&&')
-console.log(list.next().value);
-console.log('$$$$$$$$$$$$$$$$$$$')
+// let arr=['lj','梁娟','太极公司'];
+// let list = arr.entries();
+// console.log(list.next().value);
+// console.log('******************')
+// console.log(list.next().value);
+// console.log('&&&&&&&&&&&&&&&&&&&')
+// console.log(list.next().value);
+// console.log('$$$$$$$$$$$$$$$$$$$')
+
+//ES6箭头函数
+// 首先是ES5中的写法
+// function add(a,b=1){
+//     // 'use strict'
+//     return a+b;
+// }
+// // 此处获得的参数的个数是必须传递参数的个数，如果有默认自则不计入其内
+// console.log(add.length);
+// var add=(a,b=1) => a+b;
+// console.log(add(1));
+
+//对象的函数解构 json
+//
+// let json = {
+//     a:'lj',
+//     b:'梁娟'
+// }
+// function fun({a,b='web'}){
+//     console.log(a,b);
+// }
+// fun(json);
+
+//数组解构
+// let arr = ['lj','梁娟','太极'];
+// function fun(a,b,c){
+//     console.log(a,b,c)
+// }
+//
+// fun(...arr);
+// in的用法
+// let obj ={
+// //     a:'lj',
+// //     b:'梁娟'
+// // }
+// // console.log('c' in obj);
+// let arr=[lj,,,];
+// // console.log(arr.length); //3
+// console.log(0 in arr);
+// 数组遍历 forEach
+// let arr = ['lj','梁娟','太极'];
+// arr.forEach((val,index)=>console.log(index,val));
+// 数组遍历 filter
+// let arr = ['lj','梁娟','太极'];
+// arr.filter(x => console.log(x));
+// 数组遍历 some
+// let arr = ['lj','梁娟','太极'];
+// arr.some(x => console.log(x));
+// 数组遍历 map替换
+// let arr = ['lj','梁娟','太极'];
+// console.log(arr.map(x=>'web'));
+// 数组转换成字符串
+// console.log(arr.toString());
+// console.log(arr.join('|'));
+
+// 对象
+// 对象赋值
+// let name = 'jspang';
+// let skill = 'web';
+// var obj = {name,skill};
+// console.log(obj)
+// // key值的构建
+// let key = "skill"
+// var obj ={
+//     [key]:'web'
+// }
+// console.log(obj);
+//自定义对象方法
+// let obj = {
+//     add:function(a,b){
+//         return a+b;
+//     }
+// }
+// console.log(obj.add(1,2))
+
+// is()
+// let obj1={name:'lj'};
+// let obj2={name:'lj'};
+// console.log(obj1.name===obj2.name);
+// console.log(Object.is(obj1.name,obj2.name));
+// ===同值相等 is严格相等
+// console.log(+0===-0);
+// console.log(NaN===NaN);
+// console.log(Object.is(+0,-0));
+// console.log(Object.is(NaN,NaN));
+//assign
+let a={a:'jspang'};
+let b={b:'梁娟'};
+let c={c:'web'};
+let d=Object.assign(a,b,c);
+console.log(d);
