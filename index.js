@@ -191,10 +191,25 @@
 
 //find() 实例方法
 // let arr=[1,2,3,4,5,6,7,8];
-// console.log(arr.find(function(value,index,arr){
-//     // return value >5;
-//     return index>7;
-// }))
+// var v = arr.find((value,index,arr)=>{
+//     return value >4;
+//     // return index > 4;
+// });
+// console.log(v)
+
+//findIndex()方法
+// let arr1=[1,2,3,4,5,6,7,8];
+// var i = arr1.findIndex((value) => value >4);
+// console.log(i);
+
+//filter()方法 不同之处在于filter返回的是数组
+// let arr2=[1,2,3,4,5,6,7,8];
+// var a = arr2.filter((value) => value >4);
+// console.log(a)
+
+// 数组去重
+// var myArr = [1,3,4,5,6,3,7,4];
+// console.log(myArr.filter((value,index,arr)=>arr.indexOf(value)===index));
 
 // fill
 // let arr=['lj','梁娟','太极公司','你好'];
@@ -237,7 +252,10 @@
 // 首先是ES5中的写法
 // 'use strict'
 // function add(a,b=2){
-//     // 'use strict'
+//     'use strict'
+//     if(a === 0){
+//         throw new Error('This is error');
+//     }
 //     return a+b;
 // }
 // console.log(add(1))
@@ -256,12 +274,20 @@
 // var add=(a,b=2) => a+b;
 // console.log(add(1));
 
+// var add=(a,b=1)=>{
+//     console.log('taiji')
+//     return a+b;
+// }
+// console.log(add(1))
+
 //对象的函数解构 json
 // let a = undefined;
 // function fun (a=4){
 //     console.log(a);
 // }
 // fun(a);
+
+// 对象的函数结构
 // let json = {
 //     a:'lj',
 //     b:undefined
@@ -271,7 +297,7 @@
 // }
 // fun(json);
 
-//数组解构
+//数组的函数解构
 // let arr = ['lj','梁娟','太极'];
 // function fun(a,b,c,d){
 //     console.log(a,b,c,d)
@@ -326,7 +352,7 @@
 // var obj ={
 //     [key]:'web'
 // }
-// console.log(obj);
+// console.log(obj.skill);
 
 //自定义对象方法
 // let obj = {
