@@ -8,9 +8,9 @@
 //     console.log(a);
 // }
 //区块的方式测试var是全局声明
-// var a = 2;
+// let a = 2;
 // {
-//     let a = 3;
+//     var a = 3;
 // }
 // console.log(a);
 // 测试let局部申明
@@ -49,9 +49,9 @@
 // console.log(foo+bar); //控制台打印出了“lj梁娟“
 // // 圆括号的使用
 // let foo;
-// // {foo}={foo:'lj'};
-// ({foo}={foo:'lj'});
-// console.log(foo);
+// // // {foo}={foo:'lj'};
+// // ({foo}={foo:'lj'});
+// // console.log(foo);
 // 字符串的解构
 // const [a,b,c,d,e]='liang';
 // console.log(a);
@@ -70,7 +70,7 @@
 // taiji(1,2,3);
 // 声明两个数组arr1和arr2，然后我们把arr1赋值给arr2，然后我们改变arr2的值，发现arr1的值也改变了
 // let arr1=['www','taiji','com'];
-// let arr2 = arr1;
+// // let arr2 = arr1;
 // let arr2 = [...arr1];
 // console.log(arr2);
 // arr2.push('lj');
@@ -107,11 +107,11 @@
 // document.write(result);
 //字符串查找
 // ES5的写法
-// let lj='梁娟';
-// let blog = '非常高兴你能看到这篇文章，我是你的老师梁娟。这节课我们学习字符串模版。';
-// document.write(blog.indexOf(lj)>0);
+let lj='梁娟';
+let blog = '非常高兴你能看到这篇文章，我是你的老师梁娟。这节课我们学习字符串模版。';
+// document.write(blog.indexOf(lj));
 // ES6直接用includes就可以判断，不再返回索引值。
-// document.write(blog.includes(lj));
+document.write(blog.includes(lj));
 // // // 判断开头是否存在
 // document.write(blog.startsWith(lj));
 // // 判断结尾是否存在：
