@@ -107,11 +107,11 @@
 // document.write(result);
 //字符串查找
 // ES5的写法
-let lj='梁娟';
-let blog = '非常高兴你能看到这篇文章，我是你的老师梁娟。这节课我们学习字符串模版。';
+// let lj='梁娟';
+// let blog = '非常高兴你能看到这篇文章，我是你的老师梁娟。这节课我们学习字符串模版。';
 // document.write(blog.indexOf(lj));
 // ES6直接用includes就可以判断，不再返回索引值。
-document.write(blog.includes(lj));
+// document.write(blog.includes(lj));
 // // // 判断开头是否存在
 // document.write(blog.startsWith(lj));
 // // 判断结尾是否存在：
@@ -136,13 +136,13 @@ document.write(blog.includes(lj));
 // console.log(Number.isFinite(undefined));
 
 // ES5 判读NaN
-// console.log("******************************")
+// // console.log("******************************")
 // console.log(isNaN(NaN));
 // console.log(isNaN(undefined));
 // console.log(isNaN('taiji'));
 // console.log(isNaN(123));
 // console.log(isNaN({}));
-// console.log(isNaN(100+'2a'));
+// console.log(isNaN(100+'2'));
 // console.log("#############################")
 // console.log(Number.isNaN(NaN));
 // console.log(Number.isNaN(undefined));
@@ -151,6 +151,7 @@ document.write(blog.includes(lj));
 // console.log(Number.isNaN({}));
 // console.log(Number.isNaN(100+'2a'));
 // console.log(333333)
+// console.log(parseInt("abc1111"));
 // console.log(Number.isNaN(parseInt("abc1111")));
 //Number.isInteger 判断是否为整数
 // let a= 918.1
@@ -178,7 +179,7 @@ document.write(blog.includes(lj));
 //    // length必须写
 // }
 // console.log(json);
-//把json数组转换成array  Array.from方法
+// //把json数组转换成array  Array.from方法
 // let arr = Array.from(json);
 // console.log(arr);
 
@@ -252,7 +253,7 @@ document.write(blog.includes(lj));
 // 首先是ES5中的写法
 // 'use strict'
 // function add(a,b=2){
-//     'use strict'
+//     // 'use strict'
 //     if(a === 0){
 //         throw new Error('This is error');
 //     }
@@ -262,7 +263,7 @@ document.write(blog.includes(lj));
 // console.log(add.length);
 // 此处获得的参数的个数是必须传递参数的个数，如果有默认自则不计入其内
 // 有严谨模式‘use strict’函数有默认值的时候是不行的
-// function add(a,b){
+// function add(a,b=1){
 //     // 'use strict'
 //     return a+b;
 // }
@@ -273,7 +274,7 @@ document.write(blog.includes(lj));
 // 默认值  es6箭头函数
 // var add=(a,b=2) => a+b;
 // console.log(add(1));
-
+//
 // var add=(a,b=1)=>{
 //     console.log('taiji')
 //     return a+b;
@@ -395,6 +396,7 @@ document.write(blog.includes(lj));
 // console.log(lj);
 // console.log(lj.toString());
 
+
 // Symbol在对象中的应用
 // let lj = Symbol();
 // let obj = {
@@ -410,18 +412,27 @@ document.write(blog.includes(lj));
 //     console.log(obj[item]);
 // }
 // let obj ={name:'lj',skill:'web'};
-// let age = Symbol();
-// obj[age]=18;
+// // let age = Symbol();
+// // obj[age]=18;
 // // console.log(obj);
-// for(let item in obj){
-//     console.log(obj[item]);
-// }
-// console.log(obj[age]);
+// // for(let item in obj){
+// //     console.log(obj[item]);
+// // }
+// // console.log(obj[age]);
 
 // set的声明
-// let setArr = new Set(['lj','梁娟','web']);
+let setArr = new Set(['lj','梁娟','web','梁娟',]);
 // setArr.add('前端技术');
-// // console.log(setArr);
+// console.log(setArr);
+
+//eg
+// const s = new Set();
+//
+// [2, 3, 5, 4, 5, 2, 2].forEach(x => s.add(x));
+//
+// for (let i of s) {
+//     console.log(i);
+// }
 // // // // has查找set中的值
 // console.log(setArr.has('lj'));
 
@@ -451,10 +462,10 @@ document.write(blog.includes(lj));
 
 //map数据类型
 // json
-// let json={
-//     name:'lj',
-//     skill:'web'
-// };
+let json={
+    name:'lj',
+    skill:'web'
+};
 // console.log(json.name);
 
 // =>
@@ -473,7 +484,7 @@ document.write(blog.includes(lj));
 // map.clear();
 //size
 // console.log(map.size);
-// // //has
+// //has
 // console.log(map.has('lj'));
 
 //proxy 代理 ES6 增强 对象和函数(方法) 生命周期 预处理
@@ -486,6 +497,57 @@ document.write(blog.includes(lj));
 // }
 // console.log(obj.add(100));
 // console.log(obj.name);
+// for example
+const employee = {
+    firstName: 'liang',
+    lastName: 'juan'
+};
+//
+console.group('employee');
+console.log(employee.firstName);
+console.log(employee.lastName);
+console.log(employee.org);
+console.log(employee.fullName);
+console.groupEnd()
+// let handler = {
+//     get: function(target, fieldName) {
+//
+//         if(fieldName === 'fullName' ) {
+//             return `${target.firstName} ${target.lastName}`;
+//         }
+//
+//         return fieldName in target ?
+//             target[fieldName] :
+//             `No such property as, '${fieldName}'!`
+//
+//     }
+// };
+// let p = new Proxy(employee, handler);
+// console.log('#########################')
+// console.group('proxy');
+// console.log(p.firstName);
+// console.log(p.lastName);
+// console.log(p.org);
+// console.log(p.fullName);
+// console.groupEnd()
+
+// 改变set方法来实现一个验证的例子：新建一个handler，重新命名为validator
+// const validator = {
+//     set: function(obj, prop, value) {
+//         if (prop === 'age') {
+//             if(!Number.isInteger(value)) {
+//                 throw new TypeError('Age is always an Integer, Please Correct it!');
+//             }
+//             if(value < 0) {
+//                 throw new TypeError('This is insane, a negative age?');
+//             }
+//         }
+//     }
+// };
+// 然后再新建一个Proxy：
+// let pr = new Proxy(employee, validator);
+// 然后可以尝试设置一个不合法的属性，比如：
+// pr.age = "test";
 
 // var pro = new Proxy({
 //     add:function(val){
