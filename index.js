@@ -509,27 +509,27 @@ console.log(employee.lastName);
 console.log(employee.org);
 console.log(employee.fullName);
 console.groupEnd()
-// let handler = {
-//     get: function(target, fieldName) {
-//
-//         if(fieldName === 'fullName' ) {
-//             return `${target.firstName} ${target.lastName}`;
-//         }
-//
-//         return fieldName in target ?
-//             target[fieldName] :
-//             `No such property as, '${fieldName}'!`
-//
-//     }
-// };
-// let p = new Proxy(employee, handler);
-// console.log('#########################')
-// console.group('proxy');
-// console.log(p.firstName);
-// console.log(p.lastName);
-// console.log(p.org);
-// console.log(p.fullName);
-// console.groupEnd()
+let handler = {
+    get: function(target, fieldName) {
+
+        if(fieldName === 'fullName' ) {
+            return `${target.firstName} ${target.lastName}`;
+        }
+
+        return fieldName in target ?
+            target[fieldName] :
+            `No such property as, '${fieldName}'!`
+
+    }
+};
+let p = new Proxy(employee, handler);
+console.log('#########################')
+console.group('proxy');
+console.log(p.firstName);
+console.log(p.lastName);
+console.log(p.org);
+console.log(p.fullName);
+console.groupEnd()
 
 // 改变set方法来实现一个验证的例子：新建一个handler，重新命名为validator
 // const validator = {
